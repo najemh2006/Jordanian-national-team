@@ -1,0 +1,503 @@
+/* =========================================
+   Global Styles & Reset
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: "Changa", sans-serif;
+    background-color: #ffffff;
+}
+
+/* =========================================
+   Navbar Styles
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.685); 
+    backdrop-filter: blur(8px);
+    box-shadow: #ffffff1a 0px 1px 1px 0px inset, #32325d40 0px 50px 100px -20px, #0000004d 0px 30px 60px -30px;
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar ul li:first-child {
+    font-size: 30px;
+}
+
+/* يدفع باقي العناصر لليسار */
+.navbar ul li:nth-child(2) {
+    margin-right: auto; 
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 5px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000000;
+}
+
+.navbar ul li:first-child a {
+    padding: 8px 0;
+    transition: padding 0.4s ease;
+}
+
+.navbar ul li:not(:first-child) a:hover {
+    color: #CE1126;
+    transform: scale(1.1);
+}
+
+.navbar .logo {
+    height: 40px;    
+    width: auto;     
+    display: block; 
+    transition: height 0.4s ease, transform 0.3s ease;
+}
+
+.navbar .logo:hover {
+    transform: translateY(-5px);
+}
+
+/* الفئة التي تتفعل بالجافاسكريبت عند النزول */
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.98); 
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+}
+
+.navbar.scrolled .logo {
+    height: 35px; 
+}
+
+.navbar.scrolled .logo:hover {
+    transform: translateY(-3px);
+
+}
+
+.navbar.scrolled ul li:first-child a {
+    padding: 7px 0; 
+}
+
+/* =========================================
+   Home Section
+   ========================================= */
+#Home {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100%;
+    text-align: center;
+}
+
+#Home div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+}
+
+#Home div > img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    aspect-ratio: 1/1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* نصوص القسم الرئيسي */
+#Home p, 
+#Home span, 
+#Home h1 > a {
+    color: #f1f1f1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+#Home p {
+    font-size: 18px;
+    margin: 15px 0 10px 0;
+    font-weight: bold;
+}
+
+#Home span {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#Home h1 > a {
+    font-size: 32px;
+    z-index: 1;
+    outline: none;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#Home h1 > a:hover {
+    color: #CE1126;
+}
+
+/* =========================================
+   Players Section
+   ========================================= */
+#Players {
+    padding-bottom: 40px;
+}
+
+#Players > h3 {
+    text-align: center;
+    background-color: #a70f20;
+    color: #f1f1f1;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   Global Scroll State
+   ========================================= */
+body.is-scrolling-vertically .player-card {
+    pointer-events: none;
+}
+
+/* =========================================
+   Players Section (Horizontal Scroll)
+   ========================================= */
+.players-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    gap: 30px;
+    padding: 20px 40px;
+    scroll-behavior: smooth;
+    width: max-content;  
+    max-width: 100%;     
+    margin: 0 auto;
+    touch-action: pan-y; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.players-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.players-grid.is-scrolling {
+    pointer-events: none; 
+}
+
+/* بطاقة اللاعب */
+.player-card {
+    flex: 0 0 auto; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.player-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.player-info {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(206, 17, 38, 0.85) 0%, rgba(0, 0, 0, 0.2) 100%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.player-info h4 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.player-info p {
+    font-size: 16px;
+    margin: 4px 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.player-card:hover .player-info,
+.player-card:focus .player-info,
+.player-card:focus-within .player-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.player-card:hover img,
+.player-card:focus img,
+.player-card:focus-within img {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   Slider Wrapper & Arrows
+   ========================================= */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(206, 17, 38, 0.85); 
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 10px;
+    transition: all 0.3s ease;
+}
+
+.slide-btn:hover, .slide-btn:focus {
+    background-color: #a70f20;
+    transform: translateY(-50%) scale(1.1);
+    outline: none;
+}
+
+.right-btn {
+    right: 15px; 
+}
+
+.left-btn {
+    left: 15px; 
+}
+
+/* =========================================
+   Back to Top Button
+   ========================================= */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; 
+    width: 50px;
+    height: 50px;
+    background-color: #CE1126; 
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #a70f20;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* =========================================
+   Footer / About Section
+   ========================================= */
+#About {
+    padding: 30px 0;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+#About a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #007A3D;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-decoration: none;
+    margin: 0 10px; 
+    transition: all 0.3s ease;
+}
+
+#About a > i {
+    font-size: 30px;
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+#About a:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px;
+}
+
+#About a:hover > i {
+    color: #007A3D;
+}
+
+#About p {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* =========================================
+   Scroll Animations (Dynamic)
+   ========================================= */
+.hidden-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.show-scroll {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   Responsive Design (Media Queries)
+   ========================================= */
+
+/* 1. الشاشات المتوسطة والأجهزة اللوحية (Tablets) - أقل من 768 بكسل */
+@media (max-width: 768px) {
+    .navbar ul {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .navbar ul li:first-child {
+        font-size: 24px;
+    }
+    .navbar .logo {
+        height: 40px;
+    }
+    #Home h1 > a {
+        font-size: 26px;
+    }
+    #Home p {
+        font-size: 16px;
+    }
+    #Home div > img {
+        width: 120px;
+    }
+    .players-grid {
+        gap: 20px;
+        padding: 20px;
+    }
+    .player-card {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* 2. شاشات الهواتف المحمولة الصغيرة (Mobile Phones) - أقل من 480 بكسل */
+@media (max-width: 480px) {
+    .navbar ul {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .navbar ul li a {
+        padding: 5px 8px;
+    }
+    .navbar .logo {
+        height: 35px;
+    }
+    .navbar.scrolled .logo {
+        height: 25px;
+    }
+    #Home h1 > a {
+        font-size: 22px;
+    }
+    #Home div > img {
+        width: 100px;
+    }
+    .player-card {
+        width: 180px;
+        height: 180px;
+    }
+    .player-info h4 {
+        font-size: 18px;
+    }
+    .player-info p {
+        font-size: 14px;
+    }
+    .slide-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .right-btn {
+        right: 5px;
+    }
+    .left-btn {
+        left: 5px;
+    }
+    #About a {
+        width: 45px;
+        height: 45px;
+    }
+    #About a > i {
+        font-size: 22px;
+    }
+}
