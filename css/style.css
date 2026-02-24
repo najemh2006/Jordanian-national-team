@@ -11,6 +11,7 @@ html, body {
     scroll-behavior: smooth;
     font-family: "Changa", sans-serif;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -122,7 +123,7 @@ html, body {
 #Home div > img {
     border-radius: 50%;
     object-fit: cover;
-    width: 150px;
+    width: clamp(90px, 15vw, 150px);
     aspect-ratio: 1/1;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -197,6 +198,7 @@ body.is-scrolling-vertically .player-card {
     touch-action: pan-y; 
     scrollbar-width: none; 
     -ms-overflow-style: none; 
+    scroll-snap-type: x mandatory;
 }
 
 .players-grid::-webkit-scrollbar {
@@ -215,12 +217,13 @@ body.is-scrolling-vertically .player-card {
     border-radius: 20px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 250px;
-    height: 250px;
+    width: clamp(180px, 20vw, 250px);
+    height: clamp(180px, 20vw, 250px);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    scroll-snap-align: center;
 }
 
 .player-card img {
@@ -433,8 +436,9 @@ body.is-scrolling-vertically .player-card {
         height: 40px;
     }
     #Home {
-    background-attachment: scroll;
-    }
+        background-attachment: scroll;
+        background-position: center;
+        }
     #Home h1 > a {
         font-size: 26px;
     }
