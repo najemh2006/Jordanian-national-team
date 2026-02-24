@@ -432,6 +432,9 @@ body.is-scrolling-vertically .player-card {
     .navbar .logo {
         height: 40px;
     }
+    #Home {
+    background-attachment: scroll;
+    }
     #Home h1 > a {
         font-size: 26px;
     }
