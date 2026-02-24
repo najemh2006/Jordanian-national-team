@@ -15,6 +15,64 @@ html, body {
 }
 
 /* =========================================
+   Fancy Loading Screen
+========================================== */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #000000, #7a0c1a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30000;
+    transition: opacity 1s ease, visibility 1s ease;
+    overflow: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    width: 160px;
+    animation: pulse 1.6s infinite ease-in-out;
+    filter: drop-shadow(0 0 20px rgba(206, 17, 38, 0.8));
+}
+
+.loader-progress {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #f1f1f1;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    letter-spacing: 2px;
+}
+
+/* نبض الشعار */
+@keyframes pulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(206, 17, 38, 0.6)); }
+    50% { transform: scale(1.2); filter: drop-shadow(0 0 30px rgba(206, 17, 38, 1)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(206, 17, 38, 0.6)); }
+}
+
+/* إخفاء التحميل */
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Fade In للمحتوى بعد التحميل */
+body.loaded {
+    animation: fadeInContent 1s ease forwards;
+}
+
+@keyframes fadeInContent {
+    0% { opacity: 0; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================
    Navbar Styles
    ========================================= */
 .navbar {
