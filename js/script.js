@@ -121,10 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // زر يرجع للخلف
+        const direction = document.documentElement.dir === "rtl" ? -1 : 1;
+
         rightBtn.addEventListener("click", () => {
             disableHoverDuringScroll();
             grid.scrollBy({
-                left: getScrollAmount(),
+                left: -getScrollAmount() * direction,
                 behavior: "smooth"
             });
         });
@@ -133,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         leftBtn.addEventListener("click", () => {
             disableHoverDuringScroll();
             grid.scrollBy({
-                left: -getScrollAmount(),
+                left: getScrollAmount() * direction,
                 behavior: "smooth"
             });
         });
