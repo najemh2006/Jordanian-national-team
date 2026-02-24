@@ -1,6 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ==========================================
+    Fancy Loader System
+    ========================================== */
+    const loader = document.getElementById("loader");
+    const progressText = document.getElementById("progress");
+    document.body.style.overflow = "hidden"; // منع التمرير أثناء التحميل
+
+    // عداد وهمي
+    let progress = 0;
+    const fakeLoading = setInterval(() => {
+        progress += Math.floor(Math.random() * 5) + 1; // زيادة عشوائية 1-5%
+        if(progress > 100) progress = 100;
+        progressText.textContent = progress + "%";
+    }, 100);
+
+    // بعد تحميل الموقع
+    window.addEventListener("load", () => {
+        clearInterval(fakeLoading);
+        progressText.textContent = "100%";
+
+        setTimeout(() => {
+            loader.classList.add("hidden");
+            document.body.style.overflow = "auto";
+            document.body.classList.add("loaded"); // fade in للمحتوى
+        }, 800); // Delay قبل الاختفاء
+    });
+
+    /* ==========================================
        1️⃣ العناصر الأساسية
     ========================================== */
     const backToTopBtn = document.getElementById("backToTop");
