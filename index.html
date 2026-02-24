@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="شجع النشامى - Prototype">
+    <meta property="og:title" content="منتخب الأردن - النشامى">
+    <meta property="og:description" content="تعرف على لاعبي منتخب الأردن لكرة القدم">
+    <meta property="og:image" content="img/background.jpg">
     <meta name="author" content="Najem Haddadin">
     <title>النشامى - المنتخب الأردني</title>
 
@@ -22,6 +24,14 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    <div id="loader">
+        <div class="loader-content">
+            <img src="img/logo.png" alt="شعار المنتخب الأردني" class="loader-logo">
+            <div class="loader-progress">
+                <span id="progress">0%</span>
+            </div>
+        </div>
+    </div>
     <header>
         <nav class="navbar">
             <ul>
@@ -34,12 +44,12 @@
     </header>
     <section id="Home">
         <div>
-            <img src="img/king.jpg" alt="جلالة الملك"/>
-            <img src="img/prines.jpg" alt="سمو ولي العهد"/>            
+            <img src="img/king.jpg" alt="جلالة الملك عبدالله الثّاني"/>
+            <img src="img/prines.jpg" alt="سمو ولي العهد الحسين بن عبدالله الثّاني"/>            
         </div>
         <p>دعمٌ لا ينقطع.. وطموحٌ لا يحده سماء</p>
         <div>
-            <img src="img/leader.jpg" alt="المدرب جمال السلامي"/>
+            <img src="img/leader.jpg" alt="المدرب جمال السّلامي"/>
         </div>
         <span>المدرب جمال السّلامي</span>
         <p><i class="fa-solid fa-arrow-down"></i>                 وثائقي "نشمي"              <i class="fa-solid fa-arrow-down"></i></p>
@@ -53,12 +63,12 @@
             </button>
             <div class="players-grid">
                 <figure class="player-card" tabindex="0">
-                    <img src="players/alersan.jpg" alt="علي علوان" loading="lazy">
+                    <img src="players/alersan.jpg" alt="أحمد العرسان" loading="lazy">
                     <div class="player-info">
                         <h4>أحمد العرسان</h4>
                         <p>المركز: جناح أيسر</p>
                         <p>النادي: الفيصلي</p>
-                        <p>تاريخ الميلاد: 28-09-1995</p>
+                        <p>مواليد: 28-09-1995</p>
                     </div>
                 </figure>
 
@@ -68,7 +78,7 @@
                         <h4>علي علوان</h4>
                         <p>المركز: مهاجم صريح</p>
                         <p>النادي: السيلية القطري</p>
-                        <p>تاريخ الميلاد: 26-03-2000</p>
+                        <p>مواليد: 26-03-2000</p>
                     </div>
                 </figure>
 
@@ -78,7 +88,7 @@
                         <h4>عودة الفاخوري</h4>
                         <p>المركز: جناح أيسر</p>
                         <p>النادي: بيراميدز المصري</p>
-                        <p>تاريخ الميلاد: 22-11-2005</p>
+                        <p>مواليد: 22-11-2005</p>
                     </div>
                 </figure>
 
@@ -88,17 +98,17 @@
                         <h4>محمد أبو زريق "شرارة"</h4>
                         <p>المركز: جناح أيمن</p>
                         <p>النادي: الرجاء البيضاوي</p>
-                        <p>تاريخ الميلاد: 30-12-1997</p>
+                        <p>مواليد: 30-12-1997</p>
                     </div>
                 </figure>
 
                 <figure class="player-card" tabindex="0">
-                    <img src="players/altamari.jpg" alt="موسى التعمري" loading="lazy">
+                    <img src="players/altamari.jpg" alt="موسى التّعمري" loading="lazy">
                     <div class="player-info">
-                        <h4>موسى التعمري</h4>
+                        <h4>موسى التّعمري</h4>
                         <p>المركز: جناح أيمن</p>
                         <p>النادي: مونبلييه الفرنسي</p>
-                        <p>تاريخ الميلاد: 10-06-1997</p>
+                        <p>مواليد: 10-06-1997</p>
                     </div>
                 </figure>
 
@@ -108,7 +118,7 @@
                         <h4>يزن النعيمات</h4>
                         <p>المركز: مهاجم صريح</p>
                         <p>النادي: العربي القطري</p>
-                        <p>تاريخ الميلاد: 04-06-1999</p>
+                        <p>مواليد: 04-06-1999</p>
                     </div>
                 </figure>
             </div>
@@ -127,8 +137,8 @@
                     <div class="player-info">
                         <h4>رجائي عايد</h4>
                         <p>المركز: وسط محور</p>
-                        <p>النادي: الحسين إربد</p>
-                        <p>تاريخ الميلاد: 25-07-1993</p>
+                        <p>النّادي: الحسين إربد</p>
+                        <p>مواليد: 25-07-1993</p>
                     </div>
                 </figure>
 
@@ -137,28 +147,28 @@
                     <div class="player-info">
                         <h4>عامر جاموس</h4>
                         <p>المركز: وسط محور</p>
-                        <p>النادي: الزوراء العراقي</p>
-                        <p>تاريخ الميلاد: 03-07-2002</p>
+                        <p>النّادي: الزّوراء العراقي</p>
+                        <p>مواليد: 03-07-2002</p>
                     </div>
                 </figure>
 
                 <figure class="player-card" tabindex="0">
-                    <img src="players/rashdan.jpg" alt="نزار الرشدان" loading="lazy">
+                    <img src="players/rashdan.jpg" alt="نزار الرّشدان" loading="lazy">
                     <div class="player-info">
-                        <h4>نزار الرشدان</h4>
-                        <p>المركز: وسط محور | ارتكاز</p>
-                        <p>النادي: الفيصلي</p>
-                        <p>تاريخ الميلاد: 23-03-1999</p>
+                        <h4>نزار الرّشدان</h4>
+                        <p>المركز: وسط محور | الأرتكاز</p>
+                        <p>النّادي: الفيصلي</p>
+                        <p>مواليد: 23-03-1999</p>
                     </div>
                 </figure>
 
                 <figure class="player-card" tabindex="0">
                     <img src="players/alrawabdh.jpg" alt="نور الروابدة" loading="lazy">
                     <div class="player-info">
-                        <h4>نور الروابدة</h4>
+                        <h4>نور الرّوابدة</h4>
                         <p>المركز: صانع ألعاب متأخر</p>
-                        <p>النادي: سيلانغور الماليزي</p>
-                        <p>تاريخ الميلاد: 24-02-1997</p>
+                        <p>النّادي: سيلانغور الماليزي</p>
+                        <p>مواليد: 24-02-1997</p>
                     </div>
                 </figure>
 
@@ -167,8 +177,8 @@
                     <div class="player-info">
                         <h4>مُهند أبو طه</h4>
                         <p>المركز: ظهير هجومي</p>
-                        <p>النادي: القوة الجوية</p>
-                        <p>تاريخ الميلاد: 02-02-2003</p>
+                        <p>النّادي: القوة الجوية</p>
+                        <p>مواليد: 02-02-2003</p>
                     </div>
                 </figure>
 
@@ -177,8 +187,8 @@
                     <div class="player-info">
                         <h4>محمود مرضي</h4>
                         <p>المركز: وسط هجومي</p>
-                        <p>النادي: الحسين إربد</p>
-                        <p>تاريخ الميلاد: 06-10-1993</p>
+                        <p>النّادي: الحسين إربد</p>
+                        <p>مواليد: 06-10-1993</p>
                     </div>
                 </figure>
             </div>
@@ -197,8 +207,8 @@
                     <div class="player-info">
                         <h4>أدهم القريشي</h4>
                         <p>المركز: ظهير أيمن</p>
-                        <p>النادي: الحسين أربد</p>
-                        <p>تاريخ الميلاد: 07-03-1995</p>
+                        <p>النّادي: الحسين أربد</p>
+                        <p>مواليد: 07-03-1995</p>
                     </div>
                 </figure>
 
@@ -207,8 +217,8 @@
                     <div class="player-info">
                         <h4>إحسان حداد</h4>
                         <p>المركز: ظهير أيمن</p>
-                        <p>النادي: الحسين أربد</p>
-                        <p>تاريخ الميلاد: 05-02-1994</p>
+                        <p>النّادي: الحسين أربد</p>
+                        <p>مواليد: 05-02-1994</p>
                         <h5>(قائد المنتخب)</h5>
                     </div>
                 </figure>
@@ -216,10 +226,10 @@
                 <figure class="player-card" tabindex="0">
                     <img src="players/abo dahab.jpg" alt="حسام أبو ذهب" loading="lazy">
                     <div class="player-info">
-                        <h4>حسام أبو الذهب</h4>
-                        <p>المركز:قلب دفاع</p>
-                        <p>النادي: الفيصلي</p>
-                        <p>تاريخ الميلاد: 13-05-2000</p>
+                        <h4>حسام أبو الذّهب</h4>
+                        <p>المركز: قلب دفاع</p>
+                        <p>النّادي: الفيصلي</p>
+                        <p>مواليد: 13-05-2000</p>
                     </div>
                 </figure>
 
@@ -228,8 +238,8 @@
                     <div class="player-info">
                         <h4>عصام السميري</h4>
                         <p>المركز: ظهير أيمن</p>
-                        <p>النادي: السلط</p>
-                        <p>تاريخ الميلاد: 30-05-1999</p>
+                        <p>النّادي: السّلط</p>
+                        <p>مواليد: 30-05-1999</p>
                     </div>
                 </figure>
 
@@ -238,8 +248,8 @@
                     <div class="player-info">
                         <h4>عبدالله نصيب</h4>
                         <p>المركز: قلب دفاع</p>
-                        <p>النادي: الزوراء العراقي</p>
-                        <p>تاريخ الميلاد: 25-02-1994</p>
+                        <p>النّادي: الزّوراء العراقي</p>
+                        <p>مواليد: 25-02-1994</p>
                     </div>
                 </figure>
 
@@ -248,8 +258,8 @@
                     <div class="player-info">
                         <h4>محمد أبو حشيش</h4>
                         <p>المركز: ظهير أيسر</p>
-                        <p>النادي: الكرمة العراقي</p>
-                        <p>تاريخ الميلاد: 09-05-1995</p>
+                        <p>النّادي: الكرمة العراقي</p>
+                        <p>مواليد: 09-05-1995</p>
                     </div>
                 </figure>
 
@@ -258,8 +268,8 @@
                     <div class="player-info">
                         <h4>يزن العرب</h4>
                         <p>المركز: قلب دفاع</p>
-                        <p>النادي: سيؤول الكوري</p>
-                        <p>تاريخ الميلاد: 31-01-1996</p>
+                        <p>النّادي: سيؤول الكوري</p>
+                        <p>مواليد: 31-01-1996</p>
                     </div>
                 </figure>
             </div>
@@ -278,8 +288,8 @@
                     <div class="player-info">
                         <h4>نور بني عطية</h4>
                         <p>المركز: حارس مرمى</p>
-                        <p>النادي: الفيصلي</p>
-                        <p>تاريخ الميلاد: 25-01-1993</p>
+                        <p>النّادي: الفيصلي</p>
+                        <p>مواليد: 25-01-1993</p>
                     </div>
                 </figure>
 
@@ -288,8 +298,8 @@
                     <div class="player-info">
                         <h4>يزيد أبو ليلى</h4>
                         <p>المركز: حارس مرمى</p>
-                        <p>النادي: الحسين أربد</p>
-                        <p>تاريخ الميلاد: 08-01-1993</p>
+                        <p>النّادي: الحسين أربد</p>
+                        <p>مواليد: 08-01-1993</p>
                     </div>
                 </figure>
             </div>
@@ -311,4 +321,3 @@
     </a>
 </body>
 </html>
-
